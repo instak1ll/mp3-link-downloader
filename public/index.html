@@ -16,6 +16,8 @@
             background-color: #f0f0f0;
             margin: 0;
             padding: 0;
+            background: #fff;
+            color: #888;
         }
 
         h1 {
@@ -61,16 +63,175 @@
         ::placeholder {
             color: #ccc;
         }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        #navbar {
+            background: #fff;
+            border-bottom: 1px solid #e1e1e1;
+            color: #888;
+        }
+
+        .topnav {
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            padding: 10px 0;
+        }
+
+        .nav-logo a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-item a {
+            text-decoration: none;
+            color: #333;
+            padding: 14px 16px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-title {
+            cursor: pointer;
+            padding: 14px 16px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {
+                flex-direction: column;
+            }
+
+            .nav-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .icon {
+                display: block;
+            }
+
+            .nav-item a {
+                padding: 10px;
+            }
+        }
+
+        .alert-gr {
+            max-width: 960px;
+            text-align: center;
+        }
+
+        .alert-warning {
+            background-color: #cbcef2;
+            border-color: #cbcef2;
+            color: #131fa7;
+        }
+
+        .alert {
+            border-radius: 6px;
+            margin: 10px auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .gr {
+            background-color: #d4edda;
+            border-color: #d4edda;
+            color: #155724;
+        }
     </style>
 </head>
 
 <body>
+    <header id="navbar">
+        <div class="container">
+            <div class="topnav" id="myTopnav">
+                <div class="nav-logo">
+                    <a class="navbar-brand waves-effect" href="/">
+                        <span class="logo-name">SnapTube</span>
+                    </a>
+                </div>
+                <div class="nav-item" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
+                    <a itemprop="url" href="https://mp4-link-downloader.onrender.com"><span itemprop="name">Youtube to
+                            MP4</span></a>
+                    <a itemprop="url" href="https://mp3-link-downloader.onrender.com"><span itemprop="name">Youtube to
+                            MP3</span></a>
+                    <div class="dropdown">
+                        <div class="dropbtn dropdown-title"> Español
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="10" viewBox="0 0 16 8"
+                                fill="none">
+                                <path
+                                    d="M15.0449 0.291415C14.8464 0.0929657 14.5239 0.0929657 14.3255 0.291415L7.9999 6.6294L1.66192 0.291415C1.46347 0.0929657 1.14099 0.0929657 0.942538 0.291415C0.744089 0.489865 0.744089 0.812346 0.942538 1.0108L7.62781 7.69606C7.72703 7.79529 7.85107 7.8449 7.9875 7.8449C8.11153 7.8449 8.24796 7.79529 8.34719 7.69606L15.0325 1.0108C15.2433 0.812346 15.2433 0.489865 15.0449 0.291415Z"
+                                    fill="#888"></path>
+                            </svg>
+                        </div>
+                        <div class="dropdown-content">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
     <h1>YouTube MP3 Downloader</h1>
     <form action="/download" method="get">
         <label for="url">Enter YouTube Video URL:</label>
         <input type="text" id="url" name="url" required placeholder="e.g., https://www.youtube.com/watch?v=VIDEO_ID">
-        <button type="submit">Download MP3</button>
+        <button type="submit">Descargar</button>
     </form>
+    <div class="alert alert-warning alert-gr" role="alert">
+        <a target="_blank" href="/" style="text-decoration: none;">
+            💡💡 Versión beta de SnapTube: Ahora descarga vídeos de YouTube con facilidad.
+        </a>
+    </div>
+    <div class="alert alert-warning alert-gr gr" role="alert">
+        ⚡⚡ ¡Aceleración total en SnapTube! Desde el 10/08/2023, la descarga de MP3 se volverá 10 veces más veloz.
+    </div>
 </body>
 
 </html>
